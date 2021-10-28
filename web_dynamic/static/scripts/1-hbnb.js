@@ -4,11 +4,8 @@ $(document).ready(function () {
     if ($(this).is(':checked')) {
       dict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
-      delete dict.$(this).attr('data-id');
+      delete dict[$(this).attr('data-id')];
     }
-    $('DIV.amenities.h4').text(function () {
-      let keys = Object.keys(dict);
-      return keys.join(', ');
-    });
+    $('DIV.amenities h4').text(Object.keys(dict).join(", "))
   });
 });
